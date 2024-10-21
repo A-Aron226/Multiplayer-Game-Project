@@ -33,13 +33,11 @@ public class EnemyAttack : MonoBehaviour
         view = GetComponent<FieldOfView>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
         if (view.canSeePlayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.fixedDeltaTime);
         }
     }
 
