@@ -8,4 +8,5 @@ public class ItemStats : ScriptableObject
 {
     public float addHealth; //temp variable until able to see player setup
     public int coinCount;
+    public int maxItem;
 }
