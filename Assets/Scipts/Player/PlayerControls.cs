@@ -30,8 +30,8 @@ public class PlayerControls : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector2 movement = inputManager.GetPlayerMovement();
-        Vector3 move = new Vector3(movement.x, 0f, movement.y);
+        Vector3 movement = GetCameraBasedInput(inputManager.GetPlayerMovement(), Camera.main);
+        Vector3 move = new Vector3(movement.x, 0f, movement.z);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)
@@ -47,5 +47,18 @@ public class PlayerControls : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
+    }
+
+    Vector3 GetCameraBasedInput(Vector2 input, Camera cam)
+    {
+        Vector3 camRight = cam.transform.right;
+        camRight.y = 0f;
+        camRight.Normalize();
+
+        Vector3 camForward = cam.transform.forward;
+        camForward.y = 0f;
+        camForward.Normalize();
+
+        return input.x * camRight + input.y * camForward;
     }
 }
