@@ -13,12 +13,14 @@ public class PlayerControls : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private InputManager inputManager;
+    private Camera myCam;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
+        myCam = GetComponentInChildren<Camera>();
     }
 
     private void OnEnable()
@@ -40,7 +42,7 @@ public class PlayerControls : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector3 movement = GetCameraBasedInput(inputManager.GetPlayerMovement(), Camera.main);
+        Vector3 movement = GetCameraBasedInput(inputManager.GetPlayerMovement(), myCam);
         Vector3 move = new Vector3(movement.x, 0f, movement.z);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
