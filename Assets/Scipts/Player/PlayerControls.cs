@@ -21,6 +21,16 @@ public class PlayerControls : MonoBehaviour
         inputManager = InputManager.Instance;
     }
 
+    private void OnEnable()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void OnDisable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     // Update is called once per frame
     void Update()
     {
