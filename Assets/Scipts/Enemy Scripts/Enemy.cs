@@ -12,7 +12,6 @@ public enum EnemyStates
 public class Enemy : MonoBehaviour
 {
     //For patrol functions
-    //Accessible in Script
     NavMeshAgent agent;
     public Transform[] waypoints;
     int waypointIndex;
@@ -45,8 +44,6 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         path = new NavMeshPath();
-
-        agent.CalculatePath(playerTarget.position, path);
 
         player = GameObject.FindGameObjectWithTag("Player");
         UpdateDestination();
@@ -84,6 +81,11 @@ public class Enemy : MonoBehaviour
             IterateWaypointIndex();
             UpdateDestination();
         }
+
+        else if (!view.canSeePlayer)
+        {
+            UpdateDestination();
+        }
     }
 
     void UpdateDestination()
@@ -101,13 +103,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void UpdatePursue()
+    //Functions for Pursue state
+    public void UpdatePursue() //Chases player while shooting if spotted
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerTarget.transform.position, speed * Time.fixedDeltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, playerTarget.transform.position, speed * Time.deltaTime); //Unused code but might be implememnted back in
+        agent.SetDestination(playerTarget.position);
         ShootAtPlayer();
     }
 
-    void ShootAtPlayer()
+    void ShootAtPlayer() //Sets the rate of fire for when spawning the pellet prefab
     {
         bulletTime -= Time.deltaTime;
 
