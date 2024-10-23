@@ -20,11 +20,16 @@ public class Enemy : MonoBehaviour
     FieldOfView view;
 
 
-    //For enemy attacking
+    //For enemy Attack/Pursue functions
     //Accessible in Editor
     public float attackDamage;
     public float speed;
     [SerializeField] Transform playerTarget;
+    [SerializeField] private float timer = 5;
+    private float bulletTime;
+    public GameObject enemyBullet;
+    public Transform spawnPoint;
+    public float enemySpeed;
 
 
     //Accessible in Script
@@ -99,5 +104,23 @@ public class Enemy : MonoBehaviour
     public void UpdatePursue()
     {
         transform.position = Vector3.MoveTowards(transform.position, playerTarget.transform.position, speed * Time.fixedDeltaTime);
+        ShootAtPlayer();
+    }
+
+    void ShootAtPlayer()
+    {
+        bulletTime -= Time.deltaTime;
+
+        if (bulletTime > 0)
+        {
+            return;
+        }
+
+        bulletTime = timer;
+
+        GameObject pelletObj = Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+        Rigidbody bulletRig = pelletObj.GetComponent<Rigidbody>();
+        bulletRig.AddForce(bulletRig.transform.forward * enemySpeed);
+        Destroy(bulletRig, 5f);
     }
 }
