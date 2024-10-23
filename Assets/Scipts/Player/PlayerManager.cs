@@ -43,6 +43,8 @@ public class PlayerManager : MonoBehaviour
         playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
         Debug.Log(playerParent.GetComponentInChildren<Camera>().cullingMask);
         //set the action in the custom cinemachine Input Handler
-        playerParent.GetComponentInChildren<InputHandler>().horizontal = player.actions.FindAction("Look");
+        Debug.Log(player.playerIndex);
+        playerParent.GetComponentInChildren<CinemachineInputProvider>().PlayerIndex = player.playerIndex;
+        //playerParent.GetComponentInChildren<InputHandler>().horizontal = player.actions.FindAction("Look");
     }
 }
