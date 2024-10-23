@@ -16,11 +16,11 @@ public class WinFlag : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<> != null) //Waiting for name of the player script component
         {
             SceneManager.LoadScene("WinScene");
         }
-    }
+    }*/
 }

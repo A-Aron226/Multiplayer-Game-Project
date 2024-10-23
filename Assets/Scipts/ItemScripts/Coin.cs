@@ -7,9 +7,12 @@ public class Coin : MonoBehaviour
     [SerializeField] GameObject obj;
     [SerializeField] ItemStats coin;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(obj);
-        coin.coinCount += 1;
+        if (other.gameObject.tag == "Player")
+        {
+            coin.coinCount += 1;
+            Destroy(obj);
+        }
     }
 }

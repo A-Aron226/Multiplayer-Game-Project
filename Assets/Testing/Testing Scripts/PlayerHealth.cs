@@ -11,10 +11,4 @@ public class PlayerHealth : MonoBehaviour
     {
         health.currHealth = health.maxHealth;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
