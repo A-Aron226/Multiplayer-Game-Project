@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(CharacterController))]
@@ -13,30 +14,46 @@ public class PlayerControls : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private InputManager inputManager;
+    //private InputManager inputManager;
     private Camera myCam;
     private GameObject parent;
+    private InputActionAsset inputAsset;
+    private InputActionMap player;
+    private InputAction move;
+
 
     // Start is called before the first frame update
     void Start()
     {   
         //Obtain components and references
         controller = GetComponent<CharacterController>();
-        inputManager = InputManager.Instance;
+        //inputManager = InputManager.Instance;
         parent = transform.parent.gameObject;
         myCam = parent.GetComponentInChildren<Camera>();
+
+
+    }
+
+    private void Awake()
+    {
+        inputAsset = this.GetComponent<PlayerInput>().actions;
+        player = inputAsset.FindActionMap("Player");
     }
 
     private void OnEnable()
     {
         //Lock our cursor so that it isn't going all over the screen
         Cursor.lockState = CursorLockMode.Locked;
+        //move = player.FindAction("Move");
+        player.Enable();
+        
     }
 
     private void OnDisable()
     {
         //Unlock it if we aren't using player (like menus etc.)
         Cursor.lockState = CursorLockMode.None;
+        player.Disable();
     }
 
     // Update is called once per frame
@@ -50,7 +67,7 @@ public class PlayerControls : MonoBehaviour
         }
 
         //Create a vector3 that uses our input for movement, and orient it based off our camera
-        Vector3 movement = GetCameraBasedInput(inputManager.GetPlayerMovement(), myCam);
+        Vector3 movement = GetCameraBasedInput(player.FindAction("Move").ReadValue<Vector2>(), myCam);
         //Create a vector3 using the values from movement except the vertical
         Vector3 move = new Vector3(movement.x, 0f, movement.z);
         //Move the character using the controller
@@ -62,7 +79,7 @@ public class PlayerControls : MonoBehaviour
             gameObject.transform.forward = move;
         }
         //This controls our character jumping
-        if (inputManager.PlayerJumped() && groundedPlayer)
+        if (player.FindAction("Jump").triggered && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
