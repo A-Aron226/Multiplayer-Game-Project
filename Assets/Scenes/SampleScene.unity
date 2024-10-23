@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913061950360952258, guid: 6663f118008683642b03ab10f9391371, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.49
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 913061950360952258, guid: 6663f118008683642b03ab10f9391371, type: 3}
       propertyPath: m_LocalRotation.w
@@ -456,7 +456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 913061950360952258, guid: 6663f118008683642b03ab10f9391371, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.95
+      value: 10.65
       objectReference: {fileID: 0}
     - target: {fileID: 913061950360952258, guid: 6663f118008683642b03ab10f9391371, type: 3}
       propertyPath: m_LocalPosition.y
@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913061950360952258, guid: 6663f118008683642b03ab10f9391371, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.06
+      value: 1.81
       objectReference: {fileID: 0}
     - target: {fileID: 913061950360952258, guid: 6663f118008683642b03ab10f9391371, type: 3}
       propertyPath: m_LocalRotation.w
@@ -546,7 +546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: timer
-      value: 2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: enemySpeed
