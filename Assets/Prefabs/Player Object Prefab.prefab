@@ -290,7 +290,6 @@ GameObject:
   - component: {fileID: 3825621547365767023}
   - component: {fileID: 2570312481359927803}
   - component: {fileID: 7069201933667909879}
-  - component: {fileID: 1346569181363446076}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -369,36 +368,6 @@ MonoBehaviour:
   AutoEnableInputs: 1
   XYAxis: {fileID: -1252531714662240105, guid: 70df230e9018b464e90e7213f3822f62, type: 3}
   ZAxis: {fileID: 0}
---- !u!114 &1346569181363446076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033130128283360064}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 850e0633de1a1d647870353423369fec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e7e512a8-4c28-4d4f-a6bb-69896069b6f4
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  vertical:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 41de94c6-4c9c-434d-9ddc-8e57192c13d5
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!1 &7966541152648015938
 GameObject:
   m_ObjectHideFlags: 0

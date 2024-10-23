@@ -42,9 +42,12 @@ public class PlayerManager : MonoBehaviour
         Debug.Log(playerParent.GetComponentInChildren<Camera>().cullingMask);
         playerParent.GetComponentInChildren<Camera>().cullingMask |= 1 << layerToAdd;
         Debug.Log(playerParent.GetComponentInChildren<Camera>().cullingMask);
-        //set the action in the custom cinemachine Input Handler
-        Debug.Log(player.playerIndex);
+        //set the player index in the cinemachine Input Handler
         playerParent.GetComponentInChildren<CinemachineInputProvider>().PlayerIndex = player.playerIndex;
-        //playerParent.GetComponentInChildren<InputHandler>().horizontal = player.actions.FindAction("Look");
+
+        //Check if player is using keyboard, then assign the mouse to them
+        //if (player.currentControlScheme == "KeyboardMouse")
+        Debug.Log(player.currentControlScheme);
+
     }
 }
