@@ -148,3 +148,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae212027e079044fa721ea185c20878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: ab96af4c955627740aa07bc7a04de1a2, type: 2}
+  attackDamage: 25

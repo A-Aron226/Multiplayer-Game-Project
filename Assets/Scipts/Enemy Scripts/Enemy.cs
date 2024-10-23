@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
 
     //For enemy Attack/Pursue functions
     //Accessible in Editor
-    public float attackDamage;
     public float speed;
     [SerializeField] Transform playerTarget;
     [SerializeField] private float timer = 5;
