@@ -561,6 +561,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 900691045167883946, guid: 53b0fbae556139d4590bc3f5af1dcb62, type: 3}
     - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
+      propertyPath: pelletSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: playerTarget
       value: 
       objectReference: {fileID: 782467502}

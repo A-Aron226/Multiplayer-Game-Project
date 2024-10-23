@@ -22,12 +22,12 @@ public class Enemy : MonoBehaviour
     //For enemy Attack/Pursue functions
     //Accessible in Editor
     //public float speed;
-    [SerializeField] Transform playerTarget;
-    [SerializeField] private float timer = 5;
+    [SerializeField] Transform playerTarget; //plyaer object
+    [SerializeField] private float timer = 5; //rate of fire (default is 5)
     private float bulletTime;
-    public GameObject enemyBullet;
-    public Transform spawnPoint;
-    public float enemySpeed;
+    public GameObject enemyBullet; //pellet object
+    public Transform spawnPoint; //where the pellet will spawn from
+    public float pelletSpeed;
 
 
     //Accessible in Script
@@ -123,7 +123,7 @@ public class Enemy : MonoBehaviour
 
         GameObject pelletObj = Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
         Rigidbody bulletRig = pelletObj.GetComponent<Rigidbody>();
-        bulletRig.AddForce(bulletRig.transform.forward * enemySpeed);
+        bulletRig.AddForce(bulletRig.transform.forward * pelletSpeed);
         Destroy(bulletRig, 5f);
     }
 }
