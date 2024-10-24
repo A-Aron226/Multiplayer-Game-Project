@@ -629,7 +629,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 960096045834242188, guid: a0198e7140230634c9436ad3a76c2d0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 9.182
       objectReference: {fileID: 0}
     - target: {fileID: 960096045834242188, guid: a0198e7140230634c9436ad3a76c2d0a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 960096045834242188, guid: a0198e7140230634c9436ad3a76c2d0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.85
+      value: 6.982
       objectReference: {fileID: 0}
     - target: {fileID: 960096045834242188, guid: a0198e7140230634c9436ad3a76c2d0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1897,7 +1897,7 @@ PrefabInstance:
       objectReference: {fileID: 900691045167883946, guid: 53b0fbae556139d4590bc3f5af1dcb62, type: 3}
     - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: pelletSpeed
-      value: 2000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: playerTarget
