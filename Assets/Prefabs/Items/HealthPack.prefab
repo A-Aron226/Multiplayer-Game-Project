@@ -121,5 +121,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 4317843679612695441}
-  health: {fileID: 0}
+  health: {fileID: 11400000, guid: ab96af4c955627740aa07bc7a04de1a2, type: 2}
   addHealth: 0
