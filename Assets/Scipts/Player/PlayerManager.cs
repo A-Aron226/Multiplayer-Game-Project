@@ -43,7 +43,7 @@ public class PlayerManager : MonoBehaviour
         //get value of current player's layer so we can add it to our culling mask
         string playerCurrentLayer = LayerMask.LayerToName(layerToAdd);
         //add the layer
-        playerParent.GetComponentInChildren<Camera>().cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Rig", playerCurrentLayer);
+        playerParent.GetComponentInChildren<Camera>().cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Rig", "Player", "Environment", "Enemy", playerCurrentLayer);
         //set the player index in the cinemachine Input Handler
         playerParent.GetComponentInChildren<CinemachineInputProvider>().PlayerIndex = player.playerIndex;
 
