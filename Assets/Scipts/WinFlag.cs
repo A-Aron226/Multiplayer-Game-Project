@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WinFlag : MonoBehaviour
 {
-    public bool canWin = false;
+    bool canWin = false;
     [SerializeField] ItemStats stat;
 
     private void Update()

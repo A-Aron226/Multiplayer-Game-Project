@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour
     [SerializeField] ItemStats coin;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //Adds count to SO then destroys obejct
     {
         if (other.gameObject.tag == "Player")
         {

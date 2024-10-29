@@ -9,13 +9,18 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] HealthSO health;
     [SerializeField] Image healthBar;
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
+    {
+        health.currHealth = health.maxHealth;
+    }
+
+    private void OnDisable()
     {
         health.currHealth = health.maxHealth;
     }
 
     void Update()
     {
-        healthBar.fillAmount = health.currHealth / health.maxHealth;
+        healthBar.fillAmount = health.currHealth / health.maxHealth; //Updates health bar HUD
     }
 }
