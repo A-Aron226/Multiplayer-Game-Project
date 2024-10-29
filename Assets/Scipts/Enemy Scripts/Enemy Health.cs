@@ -15,4 +15,12 @@ public class EnemyHealth : MonoBehaviour
     {
         health.currHealth = 0;
     }
+
+    public void Despawn()
+    {
+        if (health.currHealth == 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
