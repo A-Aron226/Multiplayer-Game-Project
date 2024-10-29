@@ -54,7 +54,7 @@ public class HealthPackPool : MonoBehaviour
         {
             if (item.item.tag == tag)
             {
-                if (item.expandPool)
+                if (item.expandPool) //Expands the pool list of objects if true
                 {
                     GameObject obj = (GameObject)Instantiate(item.item);
                     obj.SetActive(false);
