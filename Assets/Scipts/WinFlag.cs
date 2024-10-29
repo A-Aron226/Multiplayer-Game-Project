@@ -5,22 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class WinFlag : MonoBehaviour
 {
-    bool canWin;
+    public bool canWin = false;
     [SerializeField] ItemStats stat;
 
-    public void CanWin()
+    private void Update()
     {
         if (stat.coinCount == stat.maxItem)
         {
             canWin = true;
         }
+
+        else
+        {
+            canWin = false;
+        }
+
     }
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<> != null) //Waiting for name of the player script component
+        if (other.gameObject.tag == "Player" && canWin)
         {
-            SceneManager.LoadScene("WinScene");
+            //SceneManager.LoadScene("WinScene");
+            Debug.Log("You Win!");
         }
-    }*/
+    }
 }

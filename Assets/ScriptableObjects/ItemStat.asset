@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb89aa7d5c03c5b40a416d1dedd7b87c, type: 3}
   m_Name: ItemStat
   m_EditorClassIdentifier: 
-  addHealth: 0
   coinCount: 0
+  maxItem: 2
