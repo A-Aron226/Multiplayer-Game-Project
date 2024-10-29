@@ -745,6 +745,7 @@ MonoBehaviour:
   - {fileID: 83910879}
   healthPack: {fileID: 4317843679612695441, guid: e5aaa7d248885c04bb14c3bcd4b21ea4, type: 3}
   timer: 0
+  canSpawn: 0
 --- !u!4 &395080742
 Transform:
   m_ObjectHideFlags: 0
@@ -1580,6 +1581,7 @@ MonoBehaviour:
   itemsToPool:
   - item: {fileID: 4317843679612695441, guid: e5aaa7d248885c04bb14c3bcd4b21ea4, type: 3}
     itemAmount: 1
+    expandPool: 0
 --- !u!4 &1193936829
 Transform:
   m_ObjectHideFlags: 0

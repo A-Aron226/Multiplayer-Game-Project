@@ -10,12 +10,13 @@ public class  ObjectPoolItem
     //Variables to call in inspector
     public GameObject item;
     public int itemAmount;
+    public bool expandPool = false;
 }
 public class HealthPackPool : MonoBehaviour
 {
     public static HealthPackPool SharedInstance;
-    public List<GameObject> pooledItems;
-    public List<ObjectPoolItem> itemsToPool;
+    public List<GameObject> pooledItems; //List of how many objects are being pooled in hierarchy
+    public List<ObjectPoolItem> itemsToPool; //List of what types of objects to pool
 
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class HealthPackPool : MonoBehaviour
     {
         for (int i = 0; i < pooledItems.Count; i++)
         {
-            if (!pooledItems[i].activeInHierarchy &&  pooledItems[i].tag == tag)
+            if (!pooledItems[i].activeInHierarchy && pooledItems[i].tag == tag)
             {
                 return pooledItems[i];
             }
@@ -53,10 +54,13 @@ public class HealthPackPool : MonoBehaviour
         {
             if (item.item.tag == tag)
             {
-                GameObject obj = (GameObject)Instantiate(item.item);
-                obj.SetActive(false);
-                pooledItems.Add(obj);
-                return obj;
+                if (item.expandPool)
+                {
+                    GameObject obj = (GameObject)Instantiate(item.item);
+                    obj.SetActive(false);
+                    pooledItems.Add(obj);
+                    return obj;
+                }                
             }
         }
         return null;
