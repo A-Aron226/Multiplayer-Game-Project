@@ -210,6 +210,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1804851196251917828, guid: 813c8408ba9b4ce46a460c1906d7d5c1, type: 3}
   pelletSpeed: 1000
   state: 0
+  damageable: {fileID: 539054010409931713}
 --- !u!114 &4256342677947204278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +241,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   currentHp: 0
+  isDead: 0
 --- !u!95 &2387920148580662681
 Animator:
   serializedVersion: 7
