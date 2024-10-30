@@ -604,6 +604,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10a1658e4adadd489af6c6f819bafba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunBarrelEnd: {fileID: 8824154195132515618}
+  bulletPrefab: {fileID: 900691045167883946, guid: 53b0fbae556139d4590bc3f5af1dcb62, type: 3}
+  anim: {fileID: 3549625125128951110}
+  maxAmmo: 10
+  timeBetweenShots: 0.1
 --- !u!1 &4140565826722701871
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +995,7 @@ Transform:
   m_GameObject: {fileID: 6135642029952138368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.032, y: 0.422, z: 0.633}
+  m_LocalPosition: {x: -0.032, y: 0.422, z: 0.845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
