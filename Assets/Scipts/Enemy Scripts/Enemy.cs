@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public enum EnemyStates
 {
+    Idle,
     Patrol,
     Pursue
 }
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     int waypointIndex;
     Vector3 target;
     FieldOfView view;
+    [SerializeField] bool patrols = false;
 
 
     //For enemy Attack/Pursue functions
@@ -34,7 +36,7 @@ public class Enemy : MonoBehaviour
     Rigidbody rb;
     NavMeshPath path;
     GameObject player;
-    EnemyStates state;
+    public EnemyStates state = EnemyStates.Idle;
 
     // Start is called before the first frame update
     void Start()
@@ -45,24 +47,31 @@ public class Enemy : MonoBehaviour
         path = new NavMeshPath();
 
         player = GameObject.FindGameObjectWithTag("Player");
-        UpdateDestination();
+        //UpdateDestination();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!view.canSeePlayer)
+        if (!view.canSeePlayer && patrols)
         {
             state = EnemyStates.Patrol;
         }
 
-        else
+        else if (view.canSeePlayer)
         {
             state = EnemyStates.Pursue;
         }
 
+        else
+        {
+            state = EnemyStates.Idle;
+        }
+
         switch (state)
         {
+            case EnemyStates.Idle:
+                break;
             case EnemyStates.Patrol:
                 UpdatePatrol();
                 break;

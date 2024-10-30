@@ -255,8 +255,8 @@ MonoBehaviour:
   m_VerticalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
-    m_AccelTime: 0.1
+    m_MaxSpeed: 100
+    m_AccelTime: 0.4
     m_DecelTime: 0.1
     m_InputAxisName: 
     m_InputAxisValue: 0
@@ -279,8 +279,8 @@ MonoBehaviour:
   m_HorizontalAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
-    m_AccelTime: 0.1
+    m_MaxSpeed: 100
+    m_AccelTime: 0.4
     m_DecelTime: 0.1
     m_InputAxisName: 
     m_InputAxisValue: 0
@@ -410,7 +410,7 @@ Transform:
   m_Children:
   - {fileID: 371086498417029897}
   m_Father: {fileID: 4449172321883567211}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
 --- !u!20 &8435790895411165880
 Camera:
   m_ObjectHideFlags: 0
@@ -1038,7 +1038,6 @@ GameObject:
   - component: {fileID: 8032160598339609653}
   - component: {fileID: 7865361138068073369}
   - component: {fileID: 7904821781594354603}
-  - component: {fileID: 7068645123762888489}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1247,27 +1246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: ab96af4c955627740aa07bc7a04de1a2, type: 2}
   healthBar: {fileID: 602888271513564174}
---- !u!114 &7068645123762888489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7966541152648015938}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2513f37d462c464ca7e205478bbbf97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 8435790895411165880}
-  shootableLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  gun: {fileID: 371086498417029897}
-  crosshair: {fileID: 562793322709260007}
-  barrelEnd: {fileID: 2930386294243723506}
-  colorValidTarget: {r: 0.8490566, g: 0.052064814, b: 0.052064814, a: 0}
-  colorNoValidTarget: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &9002563607592704697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,16 +1337,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3549625125128951110, guid: 1ce6440cc58586d4aad807bed1614ffa, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4bb439e2c9133ad46933ced0c34f87bf, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ce6440cc58586d4aad807bed1614ffa, type: 3}
---- !u!4 &2930386294243723506 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8824154195132515618, guid: 1ce6440cc58586d4aad807bed1614ffa, type: 3}
-  m_PrefabInstance: {fileID: 5971601255648693712}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6368577358962702041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 774294704188996361, guid: 1ce6440cc58586d4aad807bed1614ffa, type: 3}

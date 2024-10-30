@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
@@ -34,5 +35,11 @@ public class Damageable : MonoBehaviour
 
         if (currentHp < 0)
             currentHp = 0;
+        if (currentHp == 0)
+        {
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.GetComponent<Animator>().SetTrigger("Death");
+            Destroy(gameObject, 3f);
+        }
     }
 }
