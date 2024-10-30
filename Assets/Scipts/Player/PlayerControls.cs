@@ -11,6 +11,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private float sprintSpeed = 2.0f;
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -19,7 +20,6 @@ public class PlayerControls : MonoBehaviour
     private GameObject parent;
     private InputActionAsset inputAsset;
     private InputActionMap player;
-    private InputAction move;
 
 
     // Start is called before the first frame update
@@ -71,7 +71,14 @@ public class PlayerControls : MonoBehaviour
         //Create a vector3 using the values from movement except the vertical
         Vector3 move = new Vector3(movement.x, 0f, movement.z);
         //Move the character using the controller
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        if (player.FindAction("Sprint").inProgress)
+        {
+            controller.Move(move * Time.deltaTime * playerSpeed * sprintSpeed);
+        }
+        else
+        {
+            controller.Move(move * Time.deltaTime * playerSpeed);
+        }
 
         //This rotates our character in the direction of our movement
         if (move != Vector3.zero)
