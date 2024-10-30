@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float sprintSpeed = 2.0f;
+    [SerializeField] private Gun myGun;
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -94,6 +95,15 @@ public class PlayerControls : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
+        if (player.FindAction("Reload").triggered)
+        {
+            myGun.Reload();
+        }
+
+        if (player.FindAction("Attack").triggered)
+        {
+            myGun.AttemptFire();
+        }
     }
     //This function will take our input and modify it according to the direction our camera is facing
     Vector3 GetCameraBasedInput(Vector2 input, Camera cam)

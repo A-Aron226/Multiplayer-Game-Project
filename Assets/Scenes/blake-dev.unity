@@ -554,6 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34182ee5fa0c9fe4884bd9f43e6a6f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoints: []
   playerLayers:
   - serializedVersion: 2
     m_Bits: 1024
