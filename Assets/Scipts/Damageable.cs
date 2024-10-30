@@ -37,9 +37,8 @@ public class Damageable : MonoBehaviour
             currentHp = 0;
         if (currentHp == 0)
         {
-            gameObject.GetComponent<NavMeshAgent>().enabled = false;
             gameObject.GetComponent<Animator>().SetTrigger("Death");
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 2f);
         }
     }
 }
