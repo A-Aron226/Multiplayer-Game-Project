@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
 {
     private List<PlayerInput> players = new List<PlayerInput>();
 
+    [SerializeField] private List<Transform> spawnPoints;
+
     [SerializeField] private List<LayerMask> playerLayers;
 
     private PlayerInputManager playerInputManager;
@@ -19,11 +21,13 @@ public class PlayerManager : MonoBehaviour
 
     private void OnEnable()
     {
+        //Call this function when a player joins via the Player Input Manager component
         playerInputManager.onPlayerJoined += AddPlayer;
     }
 
     private void OnDisable()
     {
+        //Disable function when component is disabled
         playerInputManager.onPlayerJoined -= AddPlayer;
     }
 
@@ -33,6 +37,12 @@ public class PlayerManager : MonoBehaviour
         players.Add(player);
         //obtain the parent of this object as the player has an empty parent with several children
         Transform playerParent = player.transform.parent;
+        //Get the character controller of player and turn it off and back on in order to move via changing game objects position
+        player.gameObject.GetComponent<CharacterController>().enabled = false;
+
+        //Set our player to their corresponding spawn point
+        playerParent.position = spawnPoints[players.Count - 1].position;
+        player.gameObject.GetComponent<CharacterController>().enabled = true;
 
         //convert layer mask (bit) to an integer
         int layerToAdd = (int)Mathf.Log(playerLayers[players.Count - 1].value, 2);
