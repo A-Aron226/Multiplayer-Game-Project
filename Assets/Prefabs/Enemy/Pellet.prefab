@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2780744613755846694}
   - component: {fileID: 205270686208035180}
   - component: {fileID: -6582645749635406879}
-  - component: {fileID: -912428604452745262}
   m_Layer: 0
   m_Name: Pellet
   m_TagString: Untagged
@@ -151,15 +150,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: ab96af4c955627740aa07bc7a04de1a2, type: 2}
   attackDamage: 25
---- !u!114 &-912428604452745262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900691045167883946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45b05ad35fff36b4b8f036bf70e0493b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

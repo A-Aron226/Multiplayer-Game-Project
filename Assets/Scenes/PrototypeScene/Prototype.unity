@@ -2433,7 +2433,7 @@ PrefabInstance:
       objectReference: {fileID: 900691045167883946, guid: 53b0fbae556139d4590bc3f5af1dcb62, type: 3}
     - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: pelletSpeed
-      value: 250
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2243626561707578019, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: playerTarget
@@ -2455,6 +2455,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 1462378311}
+    - target: {fileID: 3053871871934183312, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.524
+      objectReference: {fileID: 0}
     - target: {fileID: 3217820062270096827, guid: e0edd444e81698e48aa77e9c0e44606d, type: 3}
       propertyPath: m_Name
       value: Enemy

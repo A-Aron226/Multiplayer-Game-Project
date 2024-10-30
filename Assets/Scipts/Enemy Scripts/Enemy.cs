@@ -121,6 +121,7 @@ public class Enemy : MonoBehaviour
 
     void ShootAtPlayer() //Sets the rate of fire for when spawning the pellet prefab
     {
+        
         bulletTime -= Time.deltaTime;
 
         if (bulletTime > 0)
