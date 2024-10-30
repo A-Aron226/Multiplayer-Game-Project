@@ -9,7 +9,7 @@ public class Damageable : MonoBehaviour
     [SerializeField] float maxHp = 100;
     public UnityEvent<Vector3> OnHit;
 
-    float currentHp;
+    public float currentHp;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class Damageable : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        currentHp -= amount;
+       currentHp -= amount;
 
         if (currentHp < 0)
             currentHp = 0;

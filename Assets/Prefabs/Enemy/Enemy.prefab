@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 2387920148580662681}
   m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,12 +203,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  patrols: 0
-  playerTarget: {fileID: 0}
+  patrols: 1
+  playerTarget: {fileID: 4449172321883567211, guid: 23c33ced02d4ecb48a7a1e3d1fd2fa2b, type: 3}
   timer: 5
-  enemyBullet: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  pelletSpeed: 0
+  enemyBullet: {fileID: 900691045167883946, guid: 53b0fbae556139d4590bc3f5af1dcb62, type: 3}
+  spawnPoint: {fileID: 1804851196251917828, guid: 813c8408ba9b4ce46a460c1906d7d5c1, type: 3}
+  pelletSpeed: 1000
   state: 0
 --- !u!114 &4256342677947204278
 MonoBehaviour:
@@ -239,6 +239,7 @@ MonoBehaviour:
   OnHit:
     m_PersistentCalls:
       m_Calls: []
+  currentHp: 0
 --- !u!95 &2387920148580662681
 Animator:
   serializedVersion: 7

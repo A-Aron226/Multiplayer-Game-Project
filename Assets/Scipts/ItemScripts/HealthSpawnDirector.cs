@@ -12,17 +12,25 @@ public class HealthSpawnDirector : MonoBehaviour
 
     private void FixedUpdate()
     {
-        timer += Time.fixedDeltaTime;
-
-        if (timer >= 11)
+        if (health.currHealth <= 75)
         {
-            timer = 0;           
+            timer += Time.fixedDeltaTime;
+
+            if (timer >= 11)
+            {
+                timer = 0;
+            }
+            if (timer >= 10)
+            {
+                Spawn();
+                Debug.Log("Health Pack Spawned");
+            }
+           
         }
 
-        if (health.currHealth <= 75 && timer >= 10)
+        else
         {
-            Spawn();
-            Debug.Log("Health Pack Spawned");
+            timer = 0;
         }
     }
 
