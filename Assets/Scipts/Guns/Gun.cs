@@ -48,7 +48,7 @@ public class Gun : MonoBehaviour
         }
 
         var b = Instantiate(bulletPrefab, gunBarrelEnd.transform.position, gunBarrelEnd.rotation);
-        b.GetComponent<Projectile>().Initialize(5, 100, 2, 5, null); // version without special effect
+        b.GetComponent<Projectile>().Initialize(5, 100, 2, 5, null);
 
         //Need to add animation stuff before uncommenting
         //anim.SetTrigger("shoot");

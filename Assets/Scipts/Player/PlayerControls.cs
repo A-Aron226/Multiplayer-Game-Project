@@ -64,7 +64,7 @@ public class PlayerControls : MonoBehaviour
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = -1f;
         }
 
         //Create a vector3 that uses our input for movement, and orient it based off our camera
