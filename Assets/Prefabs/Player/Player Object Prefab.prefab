@@ -1301,8 +1301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
-  jumpHeight: 5
-  gravityValue: -9.81
+  jumpHeight: 2
+  gravityValue: -18
   sprintSpeed: 2
   myGun: {fileID: 6368577358962702041}
 --- !u!143 &6657236512517016316

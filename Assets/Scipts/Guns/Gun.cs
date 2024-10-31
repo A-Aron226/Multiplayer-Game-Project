@@ -48,7 +48,7 @@ public class Gun : MonoBehaviour
         }
 
         var b = Instantiate(bulletPrefab, gunBarrelEnd.transform.position, gunBarrelEnd.rotation);
-        b.GetComponent<Projectile>().Initialize(5, 50, 2, 5, null);
+        b.GetComponent<Projectile>().Initialize(5, 100, 2, 5, null);
 
         anim.SetTrigger("shoot");
         elapsed = 0;
