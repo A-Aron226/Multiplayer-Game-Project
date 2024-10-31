@@ -31,6 +31,11 @@ public class PlayerManager : MonoBehaviour
         playerInputManager.onPlayerJoined -= AddPlayer;
     }
 
+    public int GetPlayers()
+    {
+        return players.Count;
+    }
+
     public void AddPlayer(PlayerInput player)
     {
         //add this playerinput for our player object to the list of playerinputs
