@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem.iOS;
 
 public class WinText : MonoBehaviour
 {
@@ -14,6 +13,8 @@ public class WinText : MonoBehaviour
     {
         text.text = "Player " + SGSO.winningPlayer + " won!";
         SGSO.winningPlayer = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }
