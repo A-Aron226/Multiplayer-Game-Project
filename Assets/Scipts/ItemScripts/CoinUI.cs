@@ -21,6 +21,6 @@ public class CoinUI : MonoBehaviour
     // Update is called once per frame
     void Update() //Updates count count in HUD
     {
-        coinText.text = coin.coinCount.ToString();
+        coinText.text = coin.coinCount.ToString() + "/4";
     }
 }
