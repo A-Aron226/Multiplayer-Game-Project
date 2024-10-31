@@ -14,9 +14,9 @@ public class Gun : MonoBehaviour
     [SerializeField] protected int maxAmmo;
     [SerializeField] protected float timeBetweenShots = 0.1f;
 
-    //protected
-    protected int ammo;
-    protected float elapsed = 0f;
+    //public
+    public int ammo;
+    public float elapsed = 0f;
 
     // Start is called before the first frame update
     void Start()

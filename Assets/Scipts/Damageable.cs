@@ -37,7 +37,8 @@ public class Damageable : MonoBehaviour
             currentHp = 0;
         if (currentHp == 0)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("Death");
+            //Uncomment if animation is added
+            //gameObject.GetComponent<Animator>().SetTrigger("Death");
             Destroy(gameObject, 2f);
         }
     }
