@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f13abbabbebb442937fdb5d3936b1f, type: 3}
   m_Name: StartGameObj
   m_EditorClassIdentifier: 
-  Players: 0
-  ReadyPlayers: 0
+  Players: 2
+  ReadyPlayers: 2

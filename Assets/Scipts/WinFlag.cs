@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class WinFlag : MonoBehaviour
 {
-    bool canWin = false;
+    public bool canWin = false;
     [SerializeField] ItemStats stat;
+    [SerializeField] StartGameSO SGSO;
 
     private void Update()
     {
-        if (stat.coinCount == stat.maxItem)
+        if (stat.coinCount >= stat.maxItem)
         {
             canWin = true;
         }
@@ -26,8 +28,11 @@ public class WinFlag : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && canWin)
         {
-            //SceneManager.LoadScene("WinScene");
-            Debug.Log("You Win!");
+            Debug.Log("You Won");
+            SceneManager.LoadScene("WinScene");
+            Transform otherParent = other.gameObject.transform.parent;
+            int playerNum = otherParent.GetComponentInChildren<CinemachineInputProvider>().PlayerIndex + 1;
+            SGSO.winningPlayer = playerNum;
         }
     }
 }

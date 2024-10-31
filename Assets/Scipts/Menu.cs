@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene(""); //Enter the name or build index of the scene to load first level scene
+        SceneManager.LoadScene("Prototype"); //Enter the name or build index of the scene to load first level scene
     }
 
     public void quitGame()
@@ -19,6 +19,6 @@ public class Menu : MonoBehaviour
 
     public void backToMain()
     {
-        SceneManager.LoadScene(""); //Enter name or build index of scene to load main menu scene
+        SceneManager.LoadScene("MainMenu"); //Enter name or build index of scene to load main menu scene
     }
 }

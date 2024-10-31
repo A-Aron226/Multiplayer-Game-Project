@@ -7,4 +7,5 @@ public class StartGameSO : ScriptableObject
 {
     public int Players;
     public int ReadyPlayers;
+    public int winningPlayer;
 }
